@@ -1,16 +1,22 @@
 import React from 'react';
-import { Title } from './Title';
+import { Section } from './Section';
 
-export const Statistics = ({ good, neutral, bad, total = 0, pers = 0 }) => {
+export const Statistics = ({
+  good,
+  neutral,
+  bad,
+  total = 0,
+  positivePercentage = 0,
+}) => {
   return total ? (
     <ul>
       <li>Good:{good}</li>
       <li>Neutral:{neutral}</li>
       <li>Bad:{bad}</li>
       <li>Total:{total}</li>
-      <li>Positive feedback:{pers}%</li>
+      <li>Positive feedback:{positivePercentage}%</li>
     </ul>
   ) : (
-    <Title title="No feedback given" />
+    <Section title="No feedback given" />
   );
 };
